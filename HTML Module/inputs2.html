@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Inpus Demo</title>
+</head>
+<body>
+<!-- 
+<p>Do you prefer cats of dogs?</p>
+<form>
+	<label>
+		Dogs: 
+		<input type="radio" name="petChoice" value="dogs">
+	</label>
+	<label>
+		Cats:
+		<input type="radio" name="petChoice" value="cats">
+	</label>
+
+	<p>What's your favorite color?</p>
+	<select name="color">
+		<option value="maroon">Red</option>
+		<option value="dutch royal">Orange</option>
+		<option value="sunshine">Yellow</option>
+	</select>
+
+	<textarea rows="10" cols="50" name="paragraph"></textarea>
+
+	<button>Go!</button>
+</form>
+ -->
+
+<h1>Register</h1>
+
+<form>
+	<div>
+		<label>
+			First Name:
+			<input type="text" name="firstName" placeholder="John" required>
+		</label>	
+		<label>
+			Last Name:
+			<input type="text" name="lastName" placeholder="Smith" required>
+		</label>
+	</div>
+	<div>
+		<label>
+			Male
+			<input type="radio" name="gender" value="male">
+		</label>
+		<label>
+			Female
+			<input type="radio" name="gender" value="female">
+		</label><label>
+			Other
+			<input type="radio" name="gender" value="other">
+		</label>
+	</div>
+	<div>
+		<label>
+			Email:
+			<input type="email" name="email" placeholder="Your Email" required>
+		</label>
+		<label>
+			Password:
+			<input type="password" name="password" placeholder="Your Password" minlength="5" maxlength="10" required>
+		</label>
+	</div>
+	<div>
+		<label>
+			Birthday:
+			<select name="Month">
+				<option>Jan</option>
+				<option>Feb</option>
+				<option>March</option>
+			</select>
+			<select name="Day">
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+			</select>
+			<select name="Year">
+				<option>2018</option>
+				<option>2017</option>
+				<option>2016</option>
+			</select>
+		</label>
+	</div>
+	<div>
+		<label>
+			I agree to the terms and conditions
+			<input type="checkbox" name="">
+		</label>
+	</div>
+		<input type="submit" name="Submit">
+</form>
+
+</body>
+</html>
