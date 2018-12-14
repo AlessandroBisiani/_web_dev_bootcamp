@@ -23,6 +23,12 @@ li a {
 
 }
 
+or
+
+li>a {
+
+}
+
 /*Adjacent*/
 h4 + ul {
 
