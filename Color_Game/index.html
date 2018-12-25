@@ -16,19 +16,25 @@
 </head>
 <body>
 
-    <h1><span id="colorDisplay">RGB</span> Color Game</h1>
+    <h1>
+        <span id="colorDisplay">RGB</span>
+        <br>
+         Color Game</h1>
 
-    <div>
+    <div id="stripe">
+        <button id="reset">New Colors</button>
         <span id="messageDisplay"></span>
+        <button class="mode">Easy</button>
+        <button class="mode selected">Hard</button>
     </div>
 
     <div class="container">
         <div class="square"></div>
         <div class="square"></div>
         <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
+        <div class="square hard"></div>
+        <div class="square hard"></div>
+        <div class="square hard"></div>
     </div>
 
     <!-- Bootstrap 3 -->
