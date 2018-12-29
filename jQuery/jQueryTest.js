@@ -55,21 +55,9 @@ $("input").keypress(function(event){
 // there and then. The .on("click", function(){}) function adds 
 // click listeners for all elements, including those added later.
 .on()
-$("button").on("click", function(){
-    // Do something on click
-});
-$("#special").on("keypress", function(){
-    // Do something on keypress
-});
-
-// :hover pseudoselector behavior
-$(".idgroup").on("mouseenter", function(){
-    // Do something on mouse entering the element
-    $(this).css("font-weight", "bold");
-});
-$(".idgroup").on("mouseleave", function(){
-    // Do something on mouse leaving the element
-    $(this).css("font-weight", "normal");
+$("ul").on("click", "li", function(){
+    // Do something when an li inside a 
+    // ul is clicked on.
 });
 
 <-- Effects:
