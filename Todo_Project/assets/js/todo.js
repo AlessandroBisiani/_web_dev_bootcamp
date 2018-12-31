@@ -9,7 +9,7 @@ $("ul").on("click", "li", function(){
 $("ul").on("click", ".liDelete", function(e){
     // alert("clicked");
     // console.log($(this).text());
-    $(this).parent().fadeOut(400, function(){
+    $(this).parent().fadeOut(350, function(){
         $(this).remove();
     }); 
     e.stopPropagation();
@@ -29,6 +29,5 @@ $("#liInput").on("keypress", function(e){
 });
 
 $("#inputToggleIcon").click(function(){
-    // .fadeToggle() Broken?
-    $("liInput").fadeToggle();
+    $("#liInput").fadeToggle();
 });
