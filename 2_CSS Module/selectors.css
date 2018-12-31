@@ -1,0 +1,76 @@
+/*All*/
+* {
+
+}
+
+/*Type*/
+li{
+
+}
+
+/*Class*/
+.hello{
+
+}
+
+/*ID*/
+#hello{
+
+}
+
+/*Descendant*/
+li a {
+
+}
+
+or
+
+li>a {
+
+}
+
+/*Adjacent*/
+h4 + ul {
+
+}
+
+/*Attribute - like all checkboxes or links to the same place*/
+a[href="https://www.google.com"] {
+
+}
+
+or
+
+input[type="radio"] {
+
+}
+
+/*nth of type - Selects every third one. In every group.*/
+/*https://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048*/
+li:nth-of-type(3){
+
+}
+
+/*Visited and Link*/
+a:link {
+	color: red;
+}
+
+and
+
+a:visted {
+	color: purple;
+}
+
+/*Pseudo-Class Selectors*/
+a:hover
+input:checked
+
+
+
+
+
+
+
+
+

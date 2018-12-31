@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration</title>
+</head>
+<body>
+	<h1>Register</h1>
+	<form>
+		<div>
+			<label>First Name:
+				<input type="text" name="firstName" required></label>
+			<label>Last Name:
+				<input type="text" name="lastName" required></label>
+		</div>
+		<div>
+			<label>Male 
+				<input type="radio" id="Male" name="gender"></label>
+			<label>Female
+				<input type="radio" id="Female" name="gender"></label>
+			<label>Other 
+				<input type="radio" id="Other" name="gender"></label>
+		</div>
+		<div>
+			<label>Email: 
+				<input type="email" id="email" name="email" required></label>
+			<label>Password:
+				<input type="password" id="password" name="password" pattern=".{5,10}" required title="Between 5 and 10 characters"></label>
+		</div>
+		<div>
+			<label>Birthday
+				<select name="month">
+					<option>Month</option>
+					<option>1</option>
+					<option>1</option>
+					<option>1</option>
+					<option>1</option>
+					<option>1</option>
+				</select>
+				<select name="day">
+					<option>Day</option>
+					<option>2</option>
+					<option>2</option>
+					<option>2</option>
+					<option>2</option>
+					<option>2</option>
+				</select>
+				<select name="year">
+					<option>Year</option>
+					<option>3</option>
+					<option>3</option>
+					<option>3</option>
+					<option>3</option>
+					<option>3</option>
+				</select>
+			</label>
+		</div>
+		<div>
+			<label>I agree to the terms and conditions</label>
+			<input type="checkbox" name="agreement" required>
+		</div>
+
+		<button>Submit</button>
+	</form>
+</body>
+</html>
