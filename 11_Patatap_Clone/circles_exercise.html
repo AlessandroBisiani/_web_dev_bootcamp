@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="circles_styles.css">
+    <script type="text/javascript" src="paper-full.js"></script>
+    
+    <script type="text/paperscript" canvas="canvas">
+
+        startingColor = "orange";
+        var spacing = 100;
+
+        function drawRow(x, y, length, spacing){
+            
+            for(var i=0 ; i<length ; i++){
+                var dot = new Path.Circle(new Point(x,y),8).fillColor = startingColor;
+                y, x += spacing;
+            }
+        }
+
+        function drawBox(spacing, height, width){
+            y_index = 0;
+            for(var i=0 ; i<height ; i++){
+                drawRow(0, y_index, width, spacing);
+                y_index += spacing;
+            }
+        }
+        drawBox(spacing, 10, 10);
+
+    </script>
+    <!-- <script type="text/paperscript" canvas="canvas">
+
+        var myCircle = new Path.Circle(new Point(100, 70), 50);
+        myCircle.fillColor = 'purple';
+
+        // Create a Paper.js Path to draw a line into it:
+        var path = new Path();
+        // Give the stroke a color
+        path.strokeColor = 'black';
+        var start = new Point(100, 100);
+        // Move to start and draw a line from there
+        path.moveTo(start);
+        // Note the plus operator on Point objects.
+        // PaperScript does that for us, and much more!
+        path.lineTo(start + [ 100, -50 ]);
+
+        var nextCircle = new Path.Circle(new Point(100, 70), 300);
+        nextCircle.fillColor = 'red';
+    </script> -->
+</head>
+<body>
+    <!-- <script src=".js"></script> --> -->
+    <canvas id="canvas" resize></canvas>
+</body>
+</html>
