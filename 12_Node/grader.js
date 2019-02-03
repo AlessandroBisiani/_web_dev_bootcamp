@@ -54,6 +54,6 @@ console.log(average(s));
 // the same as those of functions. 
 // Before changing "average" to "avg", this was executing well
 // until the last line, then returning: "average not a function.".
-// Perhaps because average was the return key in that context?
-// Somehow?
+// Perhaps because average was the return key from average() in that 
+// context? Somehow?
 console.log(average(s2));

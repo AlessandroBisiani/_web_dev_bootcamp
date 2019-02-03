@@ -1,6 +1,5 @@
 var faker = require('faker');
 
 for(var i=0 ; i<10 ; i++){
-    faker.product();
-    console.log();
+    console.log(output = faker.fake("{{commerce.productName}} - ${{commerce.price}}"));
 }
