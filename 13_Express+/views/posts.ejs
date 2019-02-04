@@ -1,0 +1,11 @@
+<% include partials/header.ejs %>
+
+<h1>The Front Page</h1>
+
+<ul>
+    <% for(var i=0 ; i<posts.length ; i++){ %>
+        <li><%= posts[i].title %> by <strong><%= posts[i].author %></strong></li>
+    <% } %>
+</ul>
+
+<% include partials/footer.ejs %>

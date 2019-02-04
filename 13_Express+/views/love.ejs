@@ -1,0 +1,10 @@
+<% include partials/header.ejs %>
+
+<h1>Love Page</h1>
+<h3>You fell in love with: <%= loveThing %></h3>
+
+<%if(loveThing.toLowerCase() === "rusty"){ %>
+    <p>Good choice.</p>
+<% } %>
+
+<% include partials/footer.ejs %>
