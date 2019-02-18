@@ -16,8 +16,10 @@
     "mongoose": "^5.4.10"
   },
   "nodemonConfig": {
-    "ignore": ["docs/*"],
+    "ignore": [
+      "docs/*"
+    ],
     "ext": "js",
-    "delay": "2500"
+    "delay": "0"
   }
 }

@@ -1,3 +1,6 @@
+#!/usr/bin/env nodejs
+
+
 let express         = require("express"),
 app                 = express(),
 mongoose            = require("mongoose"),
@@ -11,6 +14,7 @@ let port = 8080;
 mongoose.connect("mongodb://localhost:27017/restfulblogapp", {useNewUrlParser: true});
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 app.use(methodOverride("_method"));
 //Must go after body-parser .use()
 app.use(expressSanitizer());
