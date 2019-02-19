@@ -1,0 +1,61 @@
+<% include ../partials/header.ejs %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <p class="lead">YelpCamp</p>
+            <div class="list-group">
+                <li class="list-grounp-item">1</li>
+                <li class="list-grounp-item">2</li>
+                <li class="list-grounp-item">3</li>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="thumbnail">
+                <img class="img-responsive" src="<%= campground.image %>">
+                <div class="caption-full">
+                    <h4 class="pull-right">$9.00 per night</h4>
+                    <h4><a><%= campground.name %></a></h4>
+                    <p><%= campground.description %></p>
+                </div>
+            </div>
+            <div class="well">
+                <div class="text-right">
+                    <a class="btn btn-success" href="/campgrounds/<%= campground.id %>/comments/new">Add New Comment</a>
+                </div>
+                <hr>
+                <% for(let i=0 ; i < campground.comments.length ; i++){ %>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <%= campground.comments[i].author %>
+                            <span class="pull-right">Date Posted</span>
+                            <p> 
+                                <%= campground.comments[i].text %> 
+                            </p>
+                        </div>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p><%= campground.description %></p>
+
+
+
+<% console.log(campground.description); %>
+
+<p>
+    
+</p>
+
+<% for(let i=0 ; i < campground.comments.length ; i++){ %>
+    <p> 
+        <strong> <%= campground.comments[i].author %> </strong> - <%= campground.comments[i].text %> 
+    </p>
+<% } %>
+
+
+
+<% include ../partials/footer.ejs%>
