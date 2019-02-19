@@ -21,9 +21,9 @@ app.use(require("express-session")({
 app.use(passport.initialize());
 app.use(passport.session());
 
-passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
+passport.use(new LocalStrategy(User.authenticate()));
 
 //ROUTES BELOW
 
@@ -31,7 +31,7 @@ app.get("/", function(req, res){
     res.render("home.ejs");
 });
 
-app.get("/secret", function(req, res){
+app.get("/secret", isLoggedIn, function(req, res){
     res.render("secret.ejs");
 });
 
