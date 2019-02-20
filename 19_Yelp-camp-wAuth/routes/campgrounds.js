@@ -24,10 +24,11 @@ router.get("/new", middleware.isLoggedIn, function(req, res){
 //Campground CREATE Route
 router.post("/", middleware.isLoggedIn, function(req, res){
     let name            = req.body.name,
-        image            = req.body.image,
+        image           = req.body.image,
         desc            = req.body.description,
         author          = req.user,
-        newCampground   = {name: name, description: desc, image: image, author: {id: author.id, username: author.username}};
+        price           = req.body.price,
+        newCampground   = {name: name, description: desc, image: image, price: price, author: {id: author.id, username: author.username}};
     
     Campground.create(newCampground, function(err, newCground){
         if(err){
@@ -57,7 +58,6 @@ router.get("/:id", function(req, res){
 //EDIT Campground Route
 router.get("/:id/edit", middleware.checkOwnership, function(req, res){
     //User logged in? if so, do they own the entry? Else redirect
-         
     Campground.findById(req.params.id, function(err, foundCampground){
         res.render("campgrounds/edit.ejs", {campground: foundCampground});  
     }); 

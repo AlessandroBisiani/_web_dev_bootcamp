@@ -4,7 +4,7 @@ let     express         = require("express"),
         User            = require("../models/user");
 
 
-        //Root Route
+//Root Route
 router.get("/", function(req, res){
     res.render("landing.ejs");
 });
@@ -19,10 +19,11 @@ router.post("/register", function(req, res){
     let newUser = new User({username: req.body.username})
     User.register(newUser, req.body.password, function(err, user){
         if(err){
-            console.log(err);
-            return res.render("register");
+            req.flash("error", err.message);
+            res.render("register");
         } 
         passport.authenticate("local")(req, res, function(){
+            req.flash("success", "Welcome To Yelp Camp " + user.username);
             res.redirect("/campgrounds");
         });
     });
@@ -31,6 +32,7 @@ router.post("/register", function(req, res){
 //show login form
 router.get("/login", function(req, res){
     res.render("login.ejs");
+
 });
 
 //login POST - login logic
@@ -44,17 +46,9 @@ router.post("/login", passport.authenticate("local", {
 //LOGOUT ROUTE
 router.get("/logout", function(req, res){
     req.logout();
+    req.flash("success", "Logged you out");
     res.redirect("/campgrounds");
 });
-
-//Logged in versification middleware
-function isLoggedIn(req, res, next){
-    if(req.isAuthenticated()){
-        return next();
-    }
-    res.redirect("/login");
-}
-
 
 
 module.exports = router;
