@@ -53,12 +53,63 @@ router.get("/:id", function(req, res){
 });
 
 
+//EDIT Campground Route
+router.get("/:id/edit", checkOwnership, function(req, res){
+    //User logged in? if so, do they own the entry? Else redirect
+         
+    Campground.findById(req.params.id, function(err, foundCampground){
+        res.render("campgrounds/edit.ejs", {campground: foundCampground});  
+    }); 
+});
+
+//UPDATE Campground Route
+router.put("/:id", checkOwnership, function(req, res){
+    Campground.findByIdAndUpdate(req.params.id, req.body.campground, function(err, updateCampground){
+        if(err){
+            console.log(err);
+            res.redirect("/campgrounds");
+        } else {
+            res.redirect("/campgrounds/" + req.params.id)
+        }
+    });
+});
+
+//DESTROY Campground Route
+router.delete("/:id", checkOwnership, function(req, res){
+    Campground.findByIdAndRemove(req.params.id, function(err){
+        if(err){
+            res.redirect("/campgrounds");
+        }
+            res.redirect("/campgrounds");
+    });
+});
+
+
 //Logged in versification middleware
 function isLoggedIn(req, res, next){
     if(req.isAuthenticated()){
         return next();
     }
     res.redirect("/login");
+}
+
+//Ownership verification middleware
+function checkOwnership(req, res, next){
+    if(req.isAuthenticated()){        
+        Campground.findById(req.params.id, function(err, foundCampground){
+            if(err){
+                res.redirect("back");
+            } else {
+                if(foundCampground.author.id.equals(req.user._id)){
+                    next();
+                } else {
+                    res.redirect("back");
+                }
+            }
+        }); 
+    } else {
+        res.redirect("back");
+    }
 }
 
 module.exports = router;
